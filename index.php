@@ -18,7 +18,7 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
             			for ($k=0; $k <=6 ; $k++) { 
             				foreach ($variable as $key => $value) {
 
-    				echo $mass['orders'][$i][$key][$k][$value];
+    				echo $mass['orders'][$i][$key][$k][$key];
             				}
             			}
     		}
