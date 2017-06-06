@@ -14,7 +14,7 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
 	$url = "http://apideliverycity.ru/api/orders?sid=".$sid."&token=".$token.'&limit=6';
     	$content = file_get_contents($url);
         $mass = json_decode($content, TRUE);
-            		for($i=0;$i>=count($mass['orders']);$i++){
+            		for($i=0;$i>=6;$i++){
     				echo $mass['orders'][$i];
     		}
     	if($text == '/start'){
