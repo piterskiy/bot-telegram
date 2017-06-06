@@ -15,7 +15,13 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
     	$content = file_get_contents($url);
         $mass = json_decode($content, TRUE);
             		for($i=0;$i<=2;$i++){
-    				echo $mass['orders'][$i]['fields'][0]['title'].': '.$mass['orders'][$i]['fields'][0]['description']."<br> ".$mass['orders'][$i]['date']."<br> ".$mass['orders'][$i]['fields'][1]['title'].': '.$mass['orders'][$i]['fields'][1]['description']."<br> ".$mass['orders'][$i]['fields'][2]['title'].': '.$mass['orders'][$i]['fields'][2]['description']."<br> ".$mass['orders'][$i]['fields'][3]['title'].': '.$mass['orders'][$i]['fields'][3]['description']."<br> ".'ID '.$mass['orders'][$i]['items'][0]['id']."<br> Наименование: ".$mass['orders'][$i]['items'][0]['title'].' '.$mass['orders'][$i]['items'][0]['quantity']."шт. <br> ".$mass['orders'][$i]['items'][0]['price'].' '.$mass['orders'][$i]['items'][0]['currency']."<br> ";
+    				echo $mass['orders'][$i]['fields'][$i]['title'].': '.$mass['orders'][$i]['fields'][$i]['description']."<br> "
+    				.$mass['orders'][$i]['date']."<br> "
+    				.$mass['orders'][$i]['fields'][$i]['title'].': '.$mass['orders'][$i]['fields'][$i]['description']."<br> "
+    				.$mass['orders'][$i]['fields'][$i]['title'].': '.$mass['orders'][$i]['fields'][$i]['description']."<br> "
+    				.$mass['orders'][$i]['fields'][$i]['title'].': '.$mass['orders'][$i]['fields'][$i]['description']."<br> "
+    				.'ID '.$mass['orders'][$i]['items'][$i]['id']."<br> Наименование: ".$mass['orders'][$i]['items'][$i]['title'].' '.$mass['orders'][$i]['items'][$i]['quantity']."шт. <br> "
+    				.$mass['orders'][$i]['items'][$i]['price'].' '.$mass['orders'][$i]['items'][$i]['currency']."<br> ";
             			}
 
     	if($text == '/start'){
@@ -28,3 +34,11 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
          function sendMessage($website, $chatId, $messages){
         file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".urlencode($messages));
        }
+
+       function apiDelivery($id, $token){
+       	$url = "http://apideliverycity.ru/api/orders?sid=".$id."&token=".$token;
+    	$content = file_get_contents($url);
+        $mass = json_decode($content, TRUE);
+        $messages = var_dump($mass);
+        sendMessage($website, $chatId, $messages);
+       }    
