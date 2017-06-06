@@ -15,7 +15,8 @@
     			$messages ='Введите Sid за тем токен';
     			sendMessage($website, $chatId, $messages);
     			$content = file_get_contents("php://input");
-    			 $id = $message["text"];
+    			$messages = $message["text"];
+    			 sendMessage($website, $chatId, $messages);
 
     	}
 
