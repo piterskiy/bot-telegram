@@ -23,6 +23,7 @@
     			$messages ='Введите Sid за тем токен';
     			sendMessage($website, $chatId, $messages);
     			$messages = $text;
+    			sendMessage($website, $chatId, $messages);
     	}
 
          function sendMessage($website, $chatId, $messages){
