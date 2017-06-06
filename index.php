@@ -8,14 +8,26 @@
     $message = $update["message"];
     $chatId = $message["chat"]["id"];
     $text = $message["text"];
- switch ($text ) {
-	case 'hi':
-		$messages = 'Привет';
-		sendMessage($website, $chatId, $messages);
-		break;
-}
-     
+    	if($text =='/start'){
+    		$messages = 'Введите sid';
+    		sendMessage($website, $chatId, $messages);
+    		if ($text != '')
+    		{
+    			$id = $text;
+    			sendMessage($website, $chatId, $messages);
+    		}
+    		if ($text != '')
+    		{
+    			$token = $text;
+    			sendMessage($website, $chatId, $messages);
+    		}
+    	$url = "http://apideliverycity.ru/api/orders?sid=".$id."&token=".$token;
+    	$content = file_get_contents($url);
+        $mass = json_decode($content, TRUE);
+        $messages = var_dump($mass);
+        sendMessage($website, $chatId, $messages);
+    	}
+
          function sendMessage($website, $chatId, $messages){
         file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
        }    
-?>
