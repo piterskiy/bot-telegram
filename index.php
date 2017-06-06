@@ -16,7 +16,7 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
         $mass = json_decode($content, TRUE);
             		for($i=0;$i<=6;$i++){
             			for ($k=0; $k <=6 ; $k++) { 
-            				foreach ($variable as $key => $value) {
+            				foreach ($mass['orders'][$i] as $key) {
 
     				echo $mass['orders'][$i][$key][$k][$key];
             				}
