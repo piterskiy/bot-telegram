@@ -9,10 +9,10 @@
     $chatId = $message["chat"]["id"];
     $text = $message["text"];
 
-var_dump($mess['orders'][0]['items'][0]['title']);
+var_dump($mess['orders']['0']['items']['0']['title']);
     	if($text == '/start'){
 
-    			$messages =$mess['orders']['0']['items']['0']['title'];
+    			$messages =$mess;
     			sendMessage($website, $chatId, $messages);
 
 
