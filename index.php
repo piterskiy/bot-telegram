@@ -15,7 +15,7 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
     	$content = file_get_contents($url);
         $mass = json_decode($content, TRUE);
             		for($i=0;$i<=6;$i++){
-            			for ($k=0; $k < ; $k++) { 
+            			for ($k=0; $k <=6 ; $k++) { 
     				echo $mass['orders'][$i]['fields'][$k]['title'];
             			}
     		}
