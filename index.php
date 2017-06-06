@@ -15,9 +15,9 @@
         $mass = json_decode($content, TRUE);
         $messages = var_dump($mass);
          //  var_dump($mass['orders'][0]['items']['title']);
-foreach ($mass->orders as $key => $value) {
-	echo $value;
-}
+// foreach ($mass->orders as $key => $value) {
+// 	echo $value;
+// }
 
          file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
 
