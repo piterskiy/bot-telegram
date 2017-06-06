@@ -14,10 +14,10 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
 	$url = "http://apideliverycity.ru/api/orders?sid=".$sid."&token=".$token;
     	$content = file_get_contents($url);
         $mass = json_decode($content, TRUE);
-var_dump($mass->orders);
+var_dump($mass['orders']['0']['items'][0]['title']);
     	if($text == '/start'){
 
-    			$messages =$mass;
+    			$messages =$mass['orders']['0']['items'][0]['title'];
     			sendMessage($website, $chatId, $messages);
 
 
