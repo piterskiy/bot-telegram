@@ -13,14 +13,16 @@
     $chatId = $message["chat"]["id"];
     $text = $message["text"];
     // Пример обработки команды
-    if ($text == '/start') {
-    	$json = file_get_contents("php://input");
-    	$sid = $message["text"];
-    	$token = $message["text"];
-    	$url = "http://apideliverycity.ru//api/orders?sid=".$sid."&token=".$token;
-    	$update = json_decode($json, TRUE);
-        $welcomemessage = 'Введите токен'.json_decode($json, TRUE);
+ 
+
+    	/*$url = "http://apideliverycity.ru//api/orders?sid=".$sid."&token=".$token;*/
+    	$url = "http://apideliverycity.ru/api/orders?sid=hfgjixbl&token=cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex";
+    	$updates = json_decode($url, TRUE);
+        $messages = json_decode($updates, TRUE);
+
        // Отправляем сформированное сообщение обратно в Telegram пользователю   
-       file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$welcomemessage);    
-    }    
+    	sendMessage($website, $chatId, $message);
+        function sendMessage($website, $chatId, $message){
+       file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
+       }    
 ?>
