@@ -21,7 +21,7 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
 
     	if($text == '/start'){
     		for($i=0;$i<=4;$i++){
-    			$messages =$mass['orders'][$i]['fields'][0]['title'].': '.$mass['orders'][$i]['fields'][0]['description']."\n ".$mass['orders'][$i]['date']."\n ".$mass['orders'][$i]['fields'][1]['title'].': '.$mass['orders'][$i]['fields'][1]['description']."\n ".$mass['orders'][$i]['fields'][2]['title'].': '.$mass['orders'][$i]['fields'][2]['description']."\n ".$mass['orders'][$i]['fields'][3]['title'].': '.$mass['orders'][$i]['fields'][3]['description']."\n ".'ID '.$mass['orders'][$i]['items'][0]['id']."\nНаименование: ".$mass['orders'][$i]['items'][0]['title'].' '.$mass['orders'][$i]['items'][0]['quantity']."шт. \n ".$mass['orders'][$i]['items'][0]['price'].' '.$mass['orders'][$i]['items'][0]['currency'];
+    			$messages =$mass['orders'][$i]['fields'][0]['title'].': '.$mass['orders'][$i]['fields'][0]['description']."\n ".$mass['orders'][$i]['date']."\n ".$mass['orders'][$i]['fields'][1]['title'].': '.$mass['orders'][$i]['fields'][1]['description']."\n ".$mass['orders'][$i]['fields'][2]['title'].': '.$mass['orders'][$i]['fields'][2]['description']."\n ".$mass['orders'][$i]['fields'][3]['title'].': '.$mass['orders'][$i]['fields'][3]['description']."\n ".'ID '.$mass['orders'][$i]['items'][0]['id']."\nНаименование: ".$mass['orders'][$i]['items'][$i]['title'].' '.$mass['orders'][$i]['items'][0]['quantity']."шт. \n ".$mass['orders'][$i]['items'][0]['price'].' '.$mass['orders'][$i]['items'][0]['currency'];
     			sendMessage($website, $chatId, $messages);
     		}
     	}
