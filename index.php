@@ -12,9 +12,15 @@
     // Получаем внутренний номер чата Telegram и команду, введённую пользователем в   чате 
     $chatId = $message["chat"]["id"];
     $text = $message["text"];
-    // Пример обработки команды /start
+    // Пример обработки команды
     if ($text == '/start') {
-        $welcomemessage = 'Welcome!!! Check IP/Email for spam giving "check IP/Email" command';
+    	$json = file_get_contents("php://input");
+    	$sid = $message["text"];
+    	$token = $message["text"];
+    	$url = "http://apideliverycity.ru//api/orders?sid=".$sid."&token=".$token;
+    	$update = json_decode($json, TRUE);
+        $welcomemessage = 'Введите токен';
+
        // Отправляем сформированное сообщение обратно в Telegram пользователю   
        file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$welcomemessage);    
     }    
