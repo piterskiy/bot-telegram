@@ -18,8 +18,8 @@
 			    $website = "https://api.telegram.org/bot".$botToken;
 			    $content = file_get_contents("php://input");
 			    $update = json_decode($content, TRUE);
-    			$messages = $message["text"];
-    			 sendMessage($website, $chatId, $messages);
+    			$messag = $message["text"];
+    			 sendMessage($website, $chatId, $messag);
 
     	}
 
