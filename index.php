@@ -20,16 +20,6 @@
 // }
 
          file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
-
-
-
-
-
-
-
-
-
-
          function sendMessage($website, $chatId, $messages){
         file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
        }
