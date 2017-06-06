@@ -14,7 +14,10 @@
 
     			$messages ='Введите Sid за тем токен';
     			sendMessage($website, $chatId, $messages);
-    			$content = file_get_contents("php://input");
+    			 $botToken = "257002841:AAF73D-lPHhpnqru8jp-R9qPq5FPM1KSOx8";
+			    $website = "https://api.telegram.org/bot".$botToken;
+			    $content = file_get_contents("php://input");
+			    $update = json_decode($content, TRUE);
     			$messages = $message["text"];
     			 sendMessage($website, $chatId, $messages);
 
