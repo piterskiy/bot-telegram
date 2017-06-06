@@ -14,8 +14,8 @@
     	$content = file_get_contents('http://apideliverycity.ru/api/orders?sid=hfgjixbl&token=cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex');
         $mass = json_decode($content, TRUE);
         $messages = var_dump($mass);
-
-        	echo $mass['orders'][0].'<br>';
+           var_dump($mass['orders']["0"]);
+        	echo $mass['orders']["0"].'<br>';
 
 
          file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
