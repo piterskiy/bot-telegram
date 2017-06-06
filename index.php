@@ -12,7 +12,7 @@
 
     	if($text == '/start'){
 
-    			$messages =$mess['orders'][0]['items'][0]['title'];
+    			$messages =$mess['orders'][0];
     			sendMessage($website, $chatId, $messages);
 
 
