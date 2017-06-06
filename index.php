@@ -9,16 +9,15 @@
     $chatId = $message["chat"]["id"];
     $text = $message["text"];
 
-if ($text == '/id'){
 	sendMessage($website, $chatId, 'id');
-}
+
 
          function sendMessage($website, $chatId, $messages){
         file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
        }
-
-       function apiDelivery($id, $token){
-       	$url = "http://apideliverycity.ru/api/orders?sid=".$id."&token=".$token;
+apiDelivery('hfgjixbl', 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex')
+       function apiDelivery($sid, $token){
+       	$url = "http://apideliverycity.ru/api/orders?sid=".$sid."&token=".$token;
     	$content = file_get_contents($url);
         $mass = json_decode($content, TRUE);
         $messages = var_dump($mass);
