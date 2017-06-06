@@ -1,0 +1,33 @@
+    <html>  
+    <head>  
+    <meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">  
+    </head>  
+      
+    <body>  
+          
+        <div id="content"></div>  
+          
+        <script>  
+            function show()  
+            {  
+                $.ajax({  
+                    url: "index.php",  
+                    cache: false,  
+                    success: function(html){  
+                        $("#content").html(html);  
+                    }  
+                });  
+            }  
+          
+            $(document).ready(function(){  
+                show();  
+                setInterval('show()',1000);  
+            });  
+        </script>  
+       
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+   
+    </body>  
+    </html>  
