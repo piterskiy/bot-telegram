@@ -14,11 +14,10 @@
     $text = $message["text"];
     // Пример обработки команды
  
-    	if ($text =='/start'){
+    	if ($text == '/start'){
     	/*$url = "http://apideliverycity.ru//api/orders?sid=".$sid."&token=".$token;*/
     	$url = "http://apideliverycity.ru/api/orders?sid=hfgjixbl&token=cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex";
-    	$updates = json_decode($url, TRUE);
-        $messages = json_decode($updates, TRUE);
+        $messages = json_decode($url, TRUE);
 
        // Отправляем сформированное сообщение обратно в Telegram пользователю   
     	// sendMessage($website, $chatId, $message);
