@@ -19,7 +19,11 @@
     	$content = file_get_contents("http://apideliverycity.ru/api/orders?sid=hfgjixbl&token=cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex");
         $mass = json_decode($content, TRUE);
 
-        var_dump($mass['orders']['0']['items']['title']);
+        foreach ($mass as $key => $value) {
+    // $arr[3] будет перезаписываться значениями $arr при каждой итерации цикла
+    echo "{$key} => {$value} ";
+    print_r($arr);
+}
        // Отправляем сформированное сообщение обратно в Telegram пользователю   
     	// sendMessage($website, $chatId, $message);
         // function sendMessage($website, $chatId, $message){
