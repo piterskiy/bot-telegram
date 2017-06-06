@@ -25,7 +25,7 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
     	}
 
          function sendMessage($website, $chatId, $messages){
-        file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
+        file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".urlencode($messages));
        }
 
        function apiDelivery($id, $token){
