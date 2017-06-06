@@ -9,14 +9,13 @@
     $chatId = $message["chat"]["id"];
     $text = $message["text"];
 
-if($text == '/start'){
+
 	    $url = "http://apideliverycity.ru/api/orders?sid=hfgjixbl&token=cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex";
     	$content = file_get_contents('http://apideliverycity.ru/api/orders?sid=hfgjixbl&token=cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex');
         $mass = json_decode($content, TRUE);
         $messages = var_dump($mass);
         var_dump($mass);
          file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
-}
 
 
 
