@@ -16,7 +16,8 @@
  
     	/*$url = "http://apideliverycity.ru//api/orders?sid=".$sid."&token=".$token;*/
     	$url = "http://apideliverycity.ru/api/orders?sid=hfgjixbl&token=cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex";
-        $messages = json_decode($url, TRUE);
+    	$content = file_get_contents("php://input");
+        $messages = json_decode($content, TRUE);
         echo $messages;
        // Отправляем сформированное сообщение обратно в Telegram пользователю   
     	// sendMessage($website, $chatId, $message);
