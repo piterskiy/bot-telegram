@@ -9,13 +9,13 @@
     $chatId = $message["chat"]["id"];
     $text = $message["text"];
 
-	sendMessage($website, $chatId, 'id');
-
+if($text == '/start'){
+	apiDelivery('hfgjixbl', 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex');
+}
 
          function sendMessage($website, $chatId, $messages){
         file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
        }
-apiDelivery('hfgjixbl', 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex')
        function apiDelivery($sid, $token){
        	$url = "http://apideliverycity.ru/api/orders?sid=".$sid."&token=".$token;
     	$content = file_get_contents($url);
