@@ -14,11 +14,9 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
 	$url = "http://apideliverycity.ru/api/orders?sid=".$sid."&token=".$token;
     	$content = file_get_contents($url);
         $mass = json_decode($content, TRUE);
-        echo $mass['orders']['0']['fields'][0]['title'].': '.$mass['orders']['0']['fields'][0]['description'].' '.$mass['orders']['0']['fields'][1]['title'].':'.$mass['orders']['0']['fields'][1]['description'].' '.$mass['orders']['0']['fields'][2]['title'].':'.$mass['orders']['0']['fields'][2]['description'].' '.$mass['orders']['0']['fields'][3]['title'].':'.$mass['orders']['0']['fields'][3]['description'].' '.$mass['orders']['0']['items'][0]['title'].' '.$mass['orders']['0']['items'][0]['quantity'].'шт.  '.$mass['orders']['0']['items'][0]['price'].''.$mass['orders']['0']['items'][0]['currency'];
-		var_dump($mass['orders']['0']['items'][0]['title']);
     	if($text == '/start'){
 
-    			$messages =$mass['orders']['0']['fields'][0]['title'].': '.$mass['orders']['0']['fields'][0]['description']."\n ".$mass['orders']['0']['fields'][1]['title'].': '.$mass['orders']['0']['fields'][1]['description']."\n ".$mass['orders']['0']['fields'][2]['title'].': '.$mass['orders']['0']['fields'][2]['description']."\n ".$mass['orders']['0']['fields'][3]['title'].': '.$mass['orders']['0']['fields'][3]['description']."\n ".$mass['orders']['0']['items'][0]['title'].' '.$mass['orders']['0']['items'][0]['quantity']."шт. \n ".$mass['orders']['0']['items'][0]['price'].' '.$mass['orders']['0']['items'][0]['currency'];
+    			$messages =$mass['orders']['0']['fields'][0]['title'].': '.$mass['orders']['0']['fields'][0]['description']."\n ".$mass['orders']['0']['fields'][1]['title'].': '.$mass['orders']['0']['fields'][1]['description']."\n ".$mass['orders']['0']['fields'][2]['title'].': '.$mass['orders']['0']['fields'][2]['description']."\n ".$mass['orders']['0']['fields'][3]['title'].': '.$mass['orders']['0']['fields'][3]['description']."\n ".'ID '.$mass['orders']['0']['items'][0]['id']."\nНаименование ".$mass['orders']['0']['items'][0]['title'].' '.$mass['orders']['0']['items'][0]['quantity']."шт. \n ".$mass['orders']['0']['items'][0]['price'].' '.$mass['orders']['0']['items'][0]['currency'];
     			sendMessage($website, $chatId, $messages);
 
 
