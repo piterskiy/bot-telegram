@@ -21,5 +21,5 @@ if($text == '/start'){
     	$content = file_get_contents($url);
         $mass = json_decode($content, TRUE);
         $messages = var_dump($mass);
-        sendMessage($website, $chatId, $messages);
+         file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
        }    
