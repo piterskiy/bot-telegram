@@ -9,8 +9,8 @@
     $chatId = $message["chat"]["id"];
     $text = $message["text"];
 
-$sid ='hfgjixbl';
-$token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
+$sid ='kbzyge1o';
+$token = 'SCE3Qs7k0C9wJrg2gdbAVF2IwImW0NCwv3kVGoLp';
 	$url = "http://apideliverycity.ru/api/orders?sid=".$sid."&token=".$token;
     	$content = file_get_contents($url);
         $mass = json_decode($content, TRUE);
