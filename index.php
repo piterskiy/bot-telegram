@@ -19,7 +19,7 @@
     	$content = file_get_contents("http://apideliverycity.ru/api/orders?sid=hfgjixbl&token=cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex");
         $mass = json_decode($content, TRUE);
 
-        foreach ($mass as $key => $value) {
+        foreach ($mass['orders'] as $key => $value) {
     // $arr[3] будет перезаписываться значениями $arr при каждой итерации цикла
     echo "{$key} => {$value} ";
     print_r($arr);
