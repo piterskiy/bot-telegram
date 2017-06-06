@@ -15,7 +15,9 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
     	$content = file_get_contents($url);
         $mass = json_decode($content, TRUE);
             		for($i=0;$i<=6;$i++){
-    				echo $mass['orders'][$i];
+            			for ($k=0; $k < ; $k++) { 
+    				echo $mass['orders'][$i]['fields'][$k]['title'];
+            			}
     		}
     	if($text == '/start'){
     			$messages =$mass['orders']['0']['fields'][0]['title'].': '.$mass['orders']['0']['fields'][0]['description']."\n ".$mass['orders']['0']['date']."\n ".$mass['orders']['0']['fields'][1]['title'].': '.$mass['orders']['0']['fields'][1]['description']."\n ".$mass['orders']['0']['fields'][2]['title'].': '.$mass['orders']['0']['fields'][2]['description']."\n ".$mass['orders']['0']['fields'][3]['title'].': '.$mass['orders']['0']['fields'][3]['description']."\n ".'ID '.$mass['orders']['0']['items'][0]['id']."\nНаименование: ".$mass['orders']['0']['items'][0]['title'].' '.$mass['orders']['0']['items'][0]['quantity']."шт. \n ".$mass['orders']['0']['items'][0]['price'].' '.$mass['orders']['0']['items'][0]['currency'];
