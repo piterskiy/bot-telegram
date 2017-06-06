@@ -10,16 +10,22 @@
     $text = $message["text"];
 
 if($text == '/start'){
-	apiDelivery('hfgjixbl', 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex');
-}
-
-         function sendMessage($website, $chatId, $messages){
-        file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
-       }
-       function apiDelivery($sid, $token){
-       	$url = "http://apideliverycity.ru/api/orders?sid=".$sid."&token=".$token;
+	    $url = "http://apideliverycity.ru/api/orders?sid=hfgjixbl&token=cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex";
     	$content = file_get_contents($url);
         $mass = json_decode($content, TRUE);
         $messages = var_dump($mass);
          file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
-       }    
+}
+
+
+
+
+
+
+
+
+
+
+         function sendMessage($website, $chatId, $messages){
+        file_get_contents($website."/sendmessage?chat_id=".$chatId."&text=".$messages);
+       }
