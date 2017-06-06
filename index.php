@@ -12,14 +12,9 @@
 
     	if($text == '/start'){
 
-    			$messages ='Введите Sid за тем токен';
+    			$messages =$mess['orders'][0]['items'][0]['title'];
     			sendMessage($website, $chatId, $messages);
-    			 $botToken = "257002841:AAF73D-lPHhpnqru8jp-R9qPq5FPM1KSOx8";
-			    $website = "https://api.telegram.org/bot".$botToken;
-			    $content = file_get_contents("php://input");
-			    $update = json_decode($content, TRUE);
-    			$messag = $message["text"];
-    			 sendMessage($website, $chatId, $messag);
+
 
     	}
 
