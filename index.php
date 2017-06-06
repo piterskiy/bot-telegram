@@ -16,7 +16,10 @@ $token = 'cxUUe9jdFLALvhZKa6niBC9UFvc5BSQRnDNxi9Ex';
         $mass = json_decode($content, TRUE);
             		for($i=0;$i<=6;$i++){
             			for ($k=0; $k <=6 ; $k++) { 
-    				echo $mass['orders'][$i]['fields'][$k]['title'];
+            				foreach ($variable as $key => $value) {
+
+    				echo $mass['orders'][$i][$key][$k][$value];
+            				}
             			}
     		}
     	if($text == '/start'){
